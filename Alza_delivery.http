@@ -1,0 +1,11 @@
+@Alza_delivery_HostAddress = http://localhost:8080
+
+
+POST {{Alza_delivery_HostAddress}}/api/v1/planning/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "WarehouseIds": [1]
+}
+###

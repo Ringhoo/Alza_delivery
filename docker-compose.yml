@@ -1,0 +1,26 @@
+services:
+    app:
+        build:
+            context: .
+            target: development
+        volumes:
+          - .:/src 
+        ports:
+            - "8080:8080"
+        environment:
+            ConnectionStrings__DefaultConnection: "Server=db;Database=alza_delivery;User Id=sa;Password=Heslo123;TrustServerCertificate=True"
+        depends_on:
+            - db
+
+    db:
+        image: mcr.microsoft.com/mssql/server:2025-latest
+        environment:
+            ACCEPT_EULA: "Y"
+            MSSQL_SA_PASSWORD: "Heslo123"
+        ports:
+          - "1433:1433"
+        volumes:
+            - sql_data:/var/opt/mssql
+
+volumes:
+    sql_data:

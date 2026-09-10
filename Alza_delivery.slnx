@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Alza_delivery.csproj" />
+  <Project Path="Tests\Alza_delivery.Tests\Alza_delivery.Tests.csproj" />
+</Solution>

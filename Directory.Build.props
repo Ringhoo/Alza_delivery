@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup Condition="'$(DOTNET_RUNNING_IN_CONTAINER)' == 'true'">
+    <!-- Keep container build artifacts outside the bind-mounted source directory. -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);bin\**;obj\**</DefaultItemExcludes>
+    <MSBuildProjectExtensionsPath>/tmp/alza-delivery/$(MSBuildProjectName)/obj/</MSBuildProjectExtensionsPath>
+    <BaseIntermediateOutputPath>/tmp/alza-delivery/$(MSBuildProjectName)/obj/</BaseIntermediateOutputPath>
+    <BaseOutputPath>/tmp/alza-delivery/$(MSBuildProjectName)/bin/</BaseOutputPath>
+  </PropertyGroup>
+</Project>
