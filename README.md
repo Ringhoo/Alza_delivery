@@ -3,9 +3,9 @@
 .NET CORE ASP API aplikace řešící plánování rozvozu balíků z alza skladů do alzaboxů
 
 ## Spuštění
-Defaultně je vytvoření docker kontainer pro databázi a aplikace v development prostředí.
+Defaultně je vytvoření docker kontainer pro databázi a aplikaci v development prostředí.
 
-Je tam i target "final", ale defaultně se pouští development s bind svazkem.
+Je tam i target "final" pro produkci, ale defaultně se pouští development s bind svazkem.
 
 ### Příkazy pro spuštění
 - docker compose up --build -d
@@ -22,6 +22,8 @@ Existuje soubor "Alza_delivery.http", který lze použít pro volání API bez n
 Db secrets jsem nechal ve stringu - nemělo by být
 
 Testy se pouštějí lokálně, ideálně by asi bylo vhodné mít pro ně stage v dockerfilu, ale pro tyto účely nechávám jen takto.
+
+API je verzované (např. **/api/v1**/planning/)
 
 Aplikace je navržena tak, aby se pro každý sklad spouštěli výpočty na samostatném vlákně.
 
