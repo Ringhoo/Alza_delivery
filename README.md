@@ -2,6 +2,28 @@
 
 .NET CORE ASP API aplikace řešící plánování rozvozu balíků z alza skladů do alzaboxů
 
+## Zadání
+V rámci optimalizace a snahy o co nejrychlejší doručení je potřeba rychle a efektivně
+plánovat přepravu zásilek do AlzaBoxů, aby zákazník obdržel zboží co nejdříve.
+
+Zásilky do boxů rozvážejí malé dodávky, které jezdí po okruhu ze skladu centrálního
+pro danou oblast. Každá zásilka má definovanou hmotnost v kilogramech, objem v
+m³ (konkrétní rozměry pro zjednodušení neřešíme) a výnosnost v Kč.
+
+Pro jeden sklad máme k dispozici 120 dodávek, které jezdí po okruhu dvakrát
+denně. Do každé dodávky se vejde 7 m³ zásilek a maximální povolená hmotnost
+nákladu je 5,5 tuny.
+
+S výjimkou úterý a čtvrtku jezdíme s maximálním využitím kapacity. To znamená, že
+se během jedné cesty po okruhu nedostane na všechny balíčky, které lze
+zákazníkům odeslat. Proto chceme při každém okruhu, který vozidla absolvují,
+dosáhnout co nejvyšší výnosnosti.
+
+Jelikož je celý logistický proces Alzy poměrně komplikovaný, je pro výpočet
+rozřazení balíčků do dodávek k dispozici poměrně krátké časové okno. Program
+tedy nemůže výpočet provádět příliš dlouho. Pro jedno plánování uvažujme řádově
+statisíce balíčků.
+
 ## Spuštění
 Defaultně je vytvoření docker kontainer pro databázi a aplikaci v development prostředí.
 
